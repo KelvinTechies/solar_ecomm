@@ -125,6 +125,16 @@ function NavBar() {
           </li>
           <li>
             <Link
+              to="/dashboard/add-feature"
+              className="d-flex align-items-center gap-2"
+              onClick={handleLinkClick}
+            >
+              <PackagePlus size={18} />
+              Add Feature
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/dashboard/products"
               className="d-flex align-items-center gap-2"
               onClick={handleLinkClick}

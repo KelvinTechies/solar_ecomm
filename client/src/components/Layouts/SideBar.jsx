@@ -83,6 +83,12 @@ function SideBar() {
                 <span>Products</span>
               </Link>
             </li>
+             <li className="dropdown">
+              <Link to="/dashboard/add-feature">
+                <PackagePlus className="mr-1" />
+                <span>Add Features </span>
+              </Link>
+            </li>
             <li className="dropdown">
               <Link to="/dashboard/orders">
                 <ShoppingCart className="mr-1" />

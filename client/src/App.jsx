@@ -17,6 +17,7 @@ import ForgotPasswordPage from "./components/Authentication/ForgotPasswordPage";
 import ResetPasswordPage from "./components/Authentication/ResetPasswordPage.js";
 import AccountForm from './components/screens/dashboard/AccountForm.jsx'
 import AccountList from './components/screens/dashboard/AccountList.jsx'
+import ImageUploadForm from './components/screens/dashboard/Features.jsx'
 function App() {
 
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route index element={<Dashboard />} />{" "}
               <Route path="products" element={<Products />} />
               <Route path="add-product" element={<AddProducts />} />
+              <Route path="add-feature" element={<ImageUploadForm />} />
               <Route path="create-account" element={<AccountForm />} />
               <Route path="accounts" element={<AccountList />} />
               <Route path="edit-product/:id" element={<Edit />} />
