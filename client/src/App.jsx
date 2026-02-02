@@ -18,6 +18,8 @@ import ResetPasswordPage from "./components/Authentication/ResetPasswordPage.js"
 import AccountForm from './components/screens/dashboard/AccountForm.jsx'
 import AccountList from './components/screens/dashboard/AccountList.jsx'
 import ImageUploadForm from './components/screens/dashboard/Features.jsx'
+import Contact from './components/screens/Blog/Contact.jsx'
+import DeleteAccount from './components/screens/Blog/DeleteAccount.jsx'
 function App() {
 
   return (
@@ -30,6 +32,8 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
             <Route path="/reset-password" element={<ResetPasswordPage />} />
             <Route path="/distributor" element={<Distributor />} />
+            <Route path="/contact" element={<Contact />} />
+<Route path="/delete-account" element={<DeleteAccount />} />
             <Route path="/product-detail/:id" element={<Detail />} />
           </Route>
 
