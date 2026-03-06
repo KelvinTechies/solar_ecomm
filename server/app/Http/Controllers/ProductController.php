@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     /**
      * Display a listing of products.
-     */
+     */ 
     public function index(): JsonResponse
     {
         $products = Product::all()->map(function ($product) {

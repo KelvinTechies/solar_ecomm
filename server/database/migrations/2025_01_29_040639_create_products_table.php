@@ -18,11 +18,9 @@ return new class extends Migration
             $table->text(
                 'description'
             );
-            $table->boolean('needs_memory_card')->default(false);
             $table->string(
                 'image_url'
             )->nullable();
-            $table->text('additional_image_urls')->nullable();
             $table->string('video_url')->nullable();
             $table->timestamps();
         });

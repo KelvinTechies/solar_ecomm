@@ -1,0 +1,56 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class Cart extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'product_id',
+        'quantity',
+    ];
+
+    protected $casts = [
+        'quantity' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
+    /**
+     * Get the user that owns the cart item
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Get the product associated with the cart item
+     */
+    public function product(): BelongsTo
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    /**
+     * Get the subtotal for this cart item
+     */
+    public function getSubtotalAttribute(): float
+    {
+        return $this->product ? $this->product->price * $this->quantity : 0;
+    }
+
+    /**
+     * Scope to get cart items for a specific user
+     */
+    public function scopeForUser($query, $userId)
+    {
+        return $query->where('user_id', $userId);
+    }
+}

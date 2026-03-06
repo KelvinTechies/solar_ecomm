@@ -13,7 +13,52 @@ use Illuminate\Support\Str;
 
 class OrderController extends Controller
 {
-    public function store(Request $request)
+    //   public function store(Request $request)
+    // {
+    //     $validatedData = $request->validate([
+    //         'fullName' => 'required|string|max:255',
+    //         'email' => 'required|email',
+    //         'phone' => 'required|string',
+    //         'quantity' => 'required|string',
+    //         'address' => 'required|string',
+    //         'paymentProof' => 'required|file|mimes:pdf,jpg,jpeg,png|max:5120'
+    //     ]);
+
+    //     // Generate unique order number
+    //     $orderNumber = 'ORD-' . Str::random(8);
+
+    //     // Store payment proof in the 'public/uploads/orders' folder
+    //     $imageUrl = null;
+    //     if ($request->hasFile('paymentProof')) {
+    //         $image = $request->file('paymentProof');
+    //         $imageName = time() . '_' . $image->getClientOriginalName();
+    //         $image->move(public_path('uploads/orders'), $imageName);
+    //         $imageUrl = asset('uploads/orders/' . $imageName); // ✅ Generate full image URL
+    //     }
+
+    //     // Create order
+    //     $order = Order::create([
+    //         'order_number' => $orderNumber,
+    //         'full_name' => $validatedData['fullName'],
+    //         'email' => $validatedData['email'],
+    //         'phone' => $validatedData['phone'],
+    //         'quantity' => $validatedData['quantity'],
+    //         'address' => $validatedData['address'],
+    //         'payment_proof' => $imageUrl, // ✅ Save full image URL
+    //         'status' => 'pending'
+    //     ]);
+
+    //     // Send confirmation email
+    //     $adminEmail = "Solarvastng@gmail.com"; // Replace with actual admin email
+    //     Mail::to($adminEmail)->send(new AdminOrderNotification($order));
+    //     Mail::to($order->email)->send(new OrderConfirmation($order));
+
+    //     return response()->json([
+    //         'message' => 'Order placed successfully',
+    //         'order' => $order
+    //     ], 201);
+    // }
+  public function store(Request $request)
     {
         $validatedData = $request->validate([
             'fullName' => 'required|string|max:255',
@@ -24,6 +69,7 @@ class OrderController extends Controller
             'customMessage' => 'nullable|string|max:255', 
             'paymentProof' => 'required|file|mimes:pdf,jpg,jpeg,png|max:15120',
             'totalAmount' => 'required|numeric|min:0'
+
         ]);
 
         // Generate unique order number
@@ -46,7 +92,8 @@ class OrderController extends Controller
             'phone' => $validatedData['phone'],
             'quantity' => $validatedData['quantity'],
             'address' => $validatedData['address'],
-            'customMessage' => $validatedData['customMessage'],
+            // 'customMessage' => $validatedData['customMessage'],
+            'customMessage' => $request->input('customMessage'),
             'payment_proof' => $imageUrl, // ✅ Save full image URL
             'total_amount' => $validatedData['totalAmount'], 
             'status' => 'pending'
@@ -54,7 +101,7 @@ class OrderController extends Controller
 
         // Send confirmation email
         \Log::info($order);
-        $adminEmail = "odusoviasuyi@gmail.com"; // Replace with actual admin email
+        $adminEmail = "Solarvastng@gmail.com"; // Replace with actual admin email
         Mail::to($adminEmail)->send(new AdminOrderNotification($order));
         Mail::to($order->email)->send(new OrderConfirmation($order));
 
@@ -64,7 +111,6 @@ class OrderController extends Controller
         ], 201);
     }
 
-
     public function index()
     {
         $orders = Order::all();
@@ -73,6 +119,7 @@ class OrderController extends Controller
             'orders' => $orders
         ]);
     }
+
 
 
     public function updateStatus(Request $request, $id)
@@ -96,8 +143,8 @@ class OrderController extends Controller
             'data' => $order
         ]);
     }
-
-    public function track(Request $request)
+    
+        public function track(Request $request)
     {
         // Validate the request
         $validator = Validator::make($request->all(), [

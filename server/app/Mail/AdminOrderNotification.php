@@ -23,7 +23,7 @@ class AdminOrderNotification extends Mailable
     /**
      * Build the message.
      */
-    public function build()
+   public function build()
     {
         return $this->subject('New Order Received - ' . $this->order->order_number)
             ->with([

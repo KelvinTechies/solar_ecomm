@@ -20,8 +20,6 @@ return new class extends Migration
             $table->text('address');
             $table->string('quantity')->default("1");
             $table->string('payment_proof');
-            $table->string('total_amount');
-            $table->string('customMessage')->nullable();
             $table->string('status')->default('pending');
             $table->timestamps();
         });
