@@ -211,7 +211,7 @@ const Detail = () => {
             <div className="card-body">
               <div className="position-relative">
                 <img
-                  src={`https://api.solarvast.ng/${product.data.image_url}`}
+                  src={`https://api.solarvast.com.ng/${product.data.image_url}`}
                   alt={product.data.name}
                   className="img-fluid rounded w-100"
                   style={{ height: "400px", objectFit: "contain" }}
@@ -233,7 +233,7 @@ const Detail = () => {
             {additionalImages.map((image, index) => (
               <SwiperSlide key={index} style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
                 <img
-                  src={`https://api.solarvast.ng/${image}`}
+                  src={`https://api.solarvast.com.ng/${image}`}
                   alt={`Additional Image ${index + 1}`}
                   style={{
                     width: "100%",
@@ -291,7 +291,7 @@ const Detail = () => {
             <div className="card-body">
               <div className="position-relative">
                 <video
-                  src={`https://api.solarvast.ng/${product.data.video_url}`}
+                  src={`https://api.solarvast.com.ng/${product.data.video_url}`}
                   controls
                   className="img-fluid rounded w-100"
                   style={{ height: "400px", objectFit: "contain" }}

@@ -218,7 +218,7 @@ function BProducts() {
                   <div className="position-relative">
                     <Card.Img
                       variant="top"
-                      src={`https://api.solarvast.ng/${product.image_url}`}
+                      src={`https://api.solarvast.com.ng/${product.image_url}`}
                       alt={product.name}
                       className="p-3"
                       style={{

@@ -462,7 +462,7 @@ console.log(images)
                     <div key={image.id} className="col-md-6">
                       <div className="card">
                         <img
-                          src={`https://api.solarvast.ng/${image.url}`}
+                          src={`https://api.solarvast.com.ng/${image.url}`}
                           alt={image.title}
                           className="card-img-top"
                           style={{ height: '150px', objectFit: 'cover' }}

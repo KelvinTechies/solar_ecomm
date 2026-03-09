@@ -90,7 +90,7 @@ function Products() {
                         <td>
                           {product.image_url && (
                             <img
-                              src={`https://api.solarvast.ng/${product.image_url}`}
+                              src={`https://api.solarvast.com.ng/${product.image_url}`}
                               alt={product.name}
                               className="w-20 h-20 object-cover rounded"
                               width={100}
@@ -100,7 +100,7 @@ function Products() {
                         <td>
                           {product.video_url && (
                             <video
-                              src={`https://api.solarvast.ng/${product.video_url}`}
+                              src={`https://api.solarvast.com.ng/${product.video_url}`}
                               className="w-20 h-20 object-cover rounded"
                               width={100}
                               controls
