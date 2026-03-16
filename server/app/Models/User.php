@@ -24,7 +24,9 @@ class User extends Authenticatable
         'password',
         'phone_number',
         'address',
-        'wallet_balance'
+        'wallet_balance',
+        'apple_id',
+        'google_id',
     ];
 
     /**

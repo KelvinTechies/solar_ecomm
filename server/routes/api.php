@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\SocialAuthController;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,7 @@ Route::get('/test-mail', function () {
 
 Route::post('/register', [ AuthController::class, 'register']);
 Route::post('/login', [ AuthController::class, 'login']);
+Route::post('/auth/apple', [SocialAuthController::class, 'appleLogin']);
 Route::post('/track-order', [ OrderController::class, 'track']);
 Route::get('/users', [ AuthController::class, 'AllUsers']);
 
