@@ -72,7 +72,7 @@ Route::post('reset-password', [AuthController::class, 'resetPassword']);
 Route::middleware('auth:sanctum')->group(function () {
      Route::post('/chat/token', [ChatController::class, 'generateToken']);
     Route::post('/chat/channel', [ChatController::class, 'createChannel']);
-      
+
     Route::post('/accounts', [AccountController::class, 'store']);
 Route::get('/accounts/{id}', [AccountController::class, 'show']);
 Route::put('/accounts/{id}', [AccountController::class, 'update']);
@@ -84,30 +84,31 @@ Route::delete('/accounts/{id}', [AccountController::class, 'destroy']);
     'updateStatus']);
     Route::post('/user/update', [AuthController::class, 'update']);
 Route::get('/user', [AuthController::class, 'user']);
+Route::delete('/user/delete-account', [AuthController::class, 'delete']);
     Route::delete('/product/{id}', [ProductController::class, 'destroy']);
-    
+
       Route::get('/cart', [CartController::class, 'index']);
-    
+
     // Add item to cart
     Route::post('/cart/add', [CartController::class, 'addToCart']);
-    
+
     // Update cart item quantity
     Route::put('/cart/{cartItemId}', [CartController::class, 'updateQuantity']);
-    
+
     // Remove item from cart
     Route::delete('/cart/{cartItemId}', [CartController::class, 'removeFromCart']);
-    
+
     // Clear entire cart
     Route::delete('/cart', [CartController::class, 'clearCart']);
-    
+
     // Get cart summary (total items and amount)
     Route::get('/cart/summary', [CartController::class, 'getCartSummary']);
-    
-    
+
+
     Route::post('/images/upload', [ImageController::class, 'upload']);
 
     Route::put('/images/{id}', [ImageController::class, 'update']);
     Route::delete('/images/{id}', [ImageController::class, 'destroy']);
-    
+
     Route::post('/logout', [AuthController::class, 'logout']);
 });
