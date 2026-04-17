@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Footer from './Footer';
 import { Outlet } from 'react-router-dom';
 import TrackingModal from '../../TrackingModal';
+import Qrcode from './Qrcode';
 
 function NavBar() {
   const [showTrackingModal, setShowTrackingModal] = useState(false);
@@ -70,6 +71,7 @@ function NavBar() {
         </div>
           </header>
           {<Outlet/>}
+          <Qrcode /> 
           <Footer/>
     </>
   );
