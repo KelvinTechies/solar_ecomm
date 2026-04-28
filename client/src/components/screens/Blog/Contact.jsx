@@ -128,7 +128,7 @@ function Contact() {
                   </div>
                   <div>
                     <h5 className="mb-2">Email</h5>
-                    <p className="mb-0" style={{ fontSize: '1.1rem' }}>info@solarvast.ng</p>
+                    <p className="mb-0" style={{ fontSize: '1.1rem' }}>info@solarvast.com.ng</p>
                     {/* <p className="mb-0" style={{ fontSize: '1.1rem' }}>support@solarvast.ng</p> */}
                   </div>
                 </div>
