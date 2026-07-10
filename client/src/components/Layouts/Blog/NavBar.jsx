@@ -3,6 +3,7 @@ import Footer from './Footer';
 import { Outlet } from 'react-router-dom';
 import TrackingModal from '../../TrackingModal';
 import Qrcode from './Qrcode';
+import GoogleTranslate from './GoogleTranslate';
 
 function NavBar() {
   const [showTrackingModal, setShowTrackingModal] = useState(false);
@@ -38,7 +39,7 @@ function NavBar() {
 
           {/* Navigation */}
           <nav className="mt-3">
-            <div className="d-flex align-items-center gap-4">
+            <div className="d-flex align-items-center gap-4 justify-content-between flex-wrap">
               {/* <button className="btn btn-warning px-4">CATEGORIES</button> */}
               <div className="nav">
                 <a className="nav-link" href="/">
@@ -48,24 +49,27 @@ function NavBar() {
                 <a className="nav-link" href="/distributor">
                   BECOME A DISTRIBUTOR
                 </a>
-  <a className="nav-link" href="/contact">
-  Contact Us
-</a>
+                <a className="nav-link" href="/contact">
+                  Contact Us
+                </a>
 
-                <a 
-  className="nav-link" 
-  role="button"
-  onClick={() => setShowTrackingModal(true)}
->
-  TRACK YOUR PRODUCT
-</a>
-
-
-<TrackingModal 
-  show={showTrackingModal} 
-  onHide={() => setShowTrackingModal(false)} 
-/>
+                <a
+                  className="nav-link"
+                  role="button"
+                  onClick={() => setShowTrackingModal(true)}
+                >
+                  TRACK YOUR PRODUCT
+                </a>
               </div>
+
+              <div className="google-translator-container">
+                <GoogleTranslate />
+              </div>
+
+              <TrackingModal
+                show={showTrackingModal}
+                onHide={() => setShowTrackingModal(false)}
+              />
             </div>
           </nav>
         </div>

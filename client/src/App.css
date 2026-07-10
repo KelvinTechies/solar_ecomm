@@ -107,6 +107,53 @@
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
 }
 
+.google-translator-container {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.google-translate-widget {
+  font-size: 0.9rem;
+}
+
+#google_translate_element select {
+  padding: 0.35rem 0.8rem;
+  border-radius: 0.45rem;
+  border: 1px solid #ddd;
+  background: white;
+  color: #333;
+  font-size: 0.9rem;
+  width: auto !important;
+  min-width: 180px !important;
+  cursor: pointer;
+  appearance: none;
+}
+
+#google_translate_element .goog-te-gadget-simple {
+  display: inline-flex !important;
+  align-items: center;
+  background-color: white !important;
+  border: 1px solid #ddd !important;
+  border-radius: 0.45rem !important;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0) !important;
+  padding: 0.1rem 0.2rem !important;
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+#google_translate_element .goog-te-gadget-icon {
+  display: none !important;
+}
+
+.goog-te-menu-frame {
+  z-index: 999999 !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
 .ss_image-container {
   max-width: 100%;
   height: auto;
